@@ -1,8 +1,12 @@
 
-- name: install nginx
-  hosts: all
-  become: yes
-  roles:
-    - nginx
+- hosts: all
+  become: true
+  tasks:
+    - name: Installer nginx sur CentOS
+      yum:
+        name: nginx
+        state: present
+      when: ansible_os_family == "RedHat"
+
 
 
