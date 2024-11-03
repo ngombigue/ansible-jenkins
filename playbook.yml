@@ -1,28 +1,10 @@
 - hosts: all
   become: true
-  tasks:
-    - name: Installer nginx sur CentOS
-      yum:
-        name: nginx
-        state: present
-
-    - name: Démarrer et activer Nginx
-      service:
-        name: nginx
-        state: started
-        enabled: true
-
-    - name: Créer le fichier index.html avec mavariable
-      template:
-        src: templates/index.html.j2
-        dest: /usr/share/nginx/html/index.html
+  roles:
+    - role: nginx
       vars:
-        mavariable: "{{ mavariable | default('World') }}"
-        
-    - name: Redémarrer Nginx pour charger les nouvelles configurations
-      service:
-        name: nginx
-        state: restarted
+        mavariable: "{{ mavariable | default('DEFAUT') }}"
+
 
 
 
