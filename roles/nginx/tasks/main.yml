@@ -1,4 +1,4 @@
-- name: Installer nginx sur CentOS
+- name: Installer nginx sur ubuntu
   apt:
     name: nginx
     state: present
