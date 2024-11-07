@@ -1,8 +1,12 @@
+---
 - name: Installer nginx sur Ubuntu
-  apt:
-    name: nginx
-    state: present
-  become: true
+  hosts: all
+  become: yes
+  tasks:
+    - name: Installation de nginx
+      apt:
+        name: nginx
+        state: present
 
 
 
