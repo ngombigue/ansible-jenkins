@@ -1,5 +1,5 @@
 - hosts: all
-  become: true
+  ansible-playbook playbook.yml -i 192.168.119.136, -b --become-user root --extra-vars "mavariable=test1 ansible_sudo_pass=ngom"
   roles:
     - role: nginx
       vars:
