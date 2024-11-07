@@ -1,10 +1,9 @@
-- hosts: all
+- name: Installer nginx sur Ubuntu
+  apt:
+    name: nginx
+    state: present
   become: true
-  become_user: jenkins
-  roles:
-    - role: nginx
-  vars:
-    mavariable: "{{ mavariable | default('DEFAUT') }}"
+
 
 
 
