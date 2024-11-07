@@ -1,5 +1,5 @@
 - name: Installer nginx sur CentOS
-  yum:
+  apt:
     name: nginx
     state: present
 
