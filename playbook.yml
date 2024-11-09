@@ -2,6 +2,10 @@
 - name: Installer nginx sur Ubuntu
   hosts: all
   become: yes
+  become_user: root
+  become_method: sudo
+  ask_become_pass: false
+
   tasks:
     - name: Installation de nginx
       apt:
